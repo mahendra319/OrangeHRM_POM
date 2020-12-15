@@ -1,4 +1,4 @@
-package com.qa.ornagehrm.base;
+package com.qa.orangehrm.base;
 
 import java.util.Properties;
 
@@ -7,9 +7,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
-import com.qa.ornagehrm.pages.AddEmployeePage;
-import com.qa.ornagehrm.pages.DashboardPage;
-import com.qa.ornagehrm.pages.LoginPage;
+import com.qa.orangehrm.pages.AddEmployeePage;
+import com.qa.orangehrm.pages.DashboardPage;
+import com.qa.orangehrm.pages.LoginPage;
 
 public class BaseTest {
 

@@ -4,9 +4,9 @@ import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.qa.orangehrm.base.BaseTest;
 import com.qa.orangehrm.listerners.TestAllureListener;
 import com.qa.orangehrm.utils.Constants;
-import com.qa.ornagehrm.base.BaseTest;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;

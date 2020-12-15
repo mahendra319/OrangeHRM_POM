@@ -12,7 +12,7 @@ import org.testng.ITestResult;
 import org.testng.Reporter;
 import org.testng.TestListenerAdapter;
 
-import com.qa.ornagehrm.base.BasePage;
+import com.qa.orangehrm.base.BasePage;
 
 public class ScreenshotListenerTestNG extends TestListenerAdapter{
 	

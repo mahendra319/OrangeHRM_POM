@@ -1,11 +1,11 @@
-package com.qa.ornagehrm.pages;
+package com.qa.orangehrm.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.qa.orangehrm.base.BasePage;
 import com.qa.orangehrm.utils.Constants;
 import com.qa.orangehrm.utils.ElementUtil;
-import com.qa.ornagehrm.base.BasePage;
 
 public class AddEmployeePage extends BasePage{
 	

@@ -8,7 +8,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.qa.ornagehrm.base.BasePage;
+import com.qa.orangehrm.base.BasePage;
 
 
 

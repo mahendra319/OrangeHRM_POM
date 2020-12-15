@@ -1,4 +1,4 @@
-package com.qa.ornagehrm.base;
+package com.qa.orangehrm.base;
 
 import java.io.File;
 import java.io.FileInputStream;

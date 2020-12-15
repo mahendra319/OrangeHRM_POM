@@ -1,4 +1,4 @@
-package com.qa.ornagehrm.pages;
+package com.qa.orangehrm.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

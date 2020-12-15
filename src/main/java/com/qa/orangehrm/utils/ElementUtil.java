@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.qa.ornagehrm.base.BasePage;
+import com.qa.orangehrm.base.BasePage;
 
 public class ElementUtil {
 

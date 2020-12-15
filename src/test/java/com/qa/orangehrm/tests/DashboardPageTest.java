@@ -4,8 +4,8 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import com.qa.orangehrm.base.BaseTest;
 import com.qa.orangehrm.utils.Constants;
-import com.qa.ornagehrm.base.BaseTest;
 
 public class DashboardPageTest extends BaseTest{
 	

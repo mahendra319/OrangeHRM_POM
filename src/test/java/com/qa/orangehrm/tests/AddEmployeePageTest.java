@@ -5,9 +5,9 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.qa.orangehrm.base.BaseTest;
 import com.qa.orangehrm.utils.Constants;
 import com.qa.orangehrm.utils.ExcelUtil;
-import com.qa.ornagehrm.base.BaseTest;
 
 public class AddEmployeePageTest extends BaseTest{
 	
