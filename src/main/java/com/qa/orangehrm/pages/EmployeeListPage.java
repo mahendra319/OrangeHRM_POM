@@ -22,6 +22,10 @@ public class EmployeeListPage {
 	
 	
 	
+	public void setup() {
+		System.out.println("EmployeeListPage");
+	}
+	
 	
 	
 	
