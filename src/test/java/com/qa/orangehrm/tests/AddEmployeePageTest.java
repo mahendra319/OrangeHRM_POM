@@ -41,6 +41,7 @@ public class AddEmployeePageTest extends BaseTest{
 	public void addEmployeeTest(String firstName, String middleName,String lastName,String photograph,String userName,String password,String confirmPassword) {
 		Assert.assertTrue(addEmployeePage.addEmployee(firstName,middleName,
 				lastName,photograph,userName,password,confirmPassword));
+		System.out.println("Employee Created Successfully");
 	}
 	
 	
