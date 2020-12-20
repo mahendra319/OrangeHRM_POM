@@ -4,10 +4,10 @@
 <suite name="OrangeHRM Test Suite" thread-count="3"
 	parallel="tests" verbose="1">
 	<listeners>
-		<!-- <listener class-name="com.qa.orangehrm.listerners.ExtentReportListener" />
+		<listener class-name="com.qa.orangehrm.listerners.ExtentReportListener" />
 		<listener class-name="com.qa.orangehrm.listerners.ScreenshotListenerTestNG" />
-		<listener class-name="com.qa.orangehrm.listerners.pdfListener" /> -->
-		<!-- <listener class-name="com.qa.orangehrm.listerners.TestAllureListener" /> -->
+		<listener class-name="com.qa.orangehrm.listerners.pdfListener" />
+		<listener class-name="com.qa.orangehrm.listerners.TestAllureListener" />
 		<listener class-name="com.qa.orangehrm.listerners.TesultsListener" />
 	</listeners>
 
