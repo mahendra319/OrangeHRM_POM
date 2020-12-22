@@ -4,9 +4,9 @@
 <suite name="OrangeHRM Test Suite" thread-count="3"
 	parallel="tests" verbose="1">
 	<listeners>
-		<listener class-name="com.qa.orangehrm.listerners.ExtentReportListener" />
+		<!-- <listener class-name="com.qa.orangehrm.listerners.ExtentReportListener" />
 		<listener class-name="com.qa.orangehrm.listerners.ScreenshotListenerTestNG" />
-		<listener class-name="com.qa.orangehrm.listerners.pdfListener" />
+		<listener class-name="com.qa.orangehrm.listerners.pdfListener" /> -->
 		<listener class-name="com.qa.orangehrm.listerners.TestAllureListener" />
 		<listener class-name="com.qa.orangehrm.listerners.TesultsListener" />
 	</listeners>
@@ -21,6 +21,13 @@
 	<!-- Cross browser testing with parallel execution -->
 	<test name="Login Page Tests">
 		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.qa.orangehrm.tests.LoginPageTest" />
+		</classes>
+	</test>
+	
+	<test name="Login Page Tests - ff">
+		<parameter name="browser" value="firefox" />
 		<classes>
 			<class name="com.qa.orangehrm.tests.LoginPageTest" />
 		</classes>

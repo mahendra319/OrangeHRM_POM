@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -12,8 +14,12 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 import com.qa.orangehrm.utils.BrowserOptionsUtil;
@@ -50,12 +56,24 @@ public class BasePage {
 		
 		if(browserName.equalsIgnoreCase("chrome")) {
 			WebDriverManager.chromedriver().setup();
-			//driver = new ChromeDriver(browserOptionsUtil.getChromeBrowserOptions());
-			tlDriver.set(new ChromeDriver(browserOptionsUtil.getChromeBrowserOptions()));
+			
+			if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+				init_remoteWebDriver(browserName);
+			}else {
+				//driver = new ChromeDriver(browserOptionsUtil.getChromeBrowserOptions());
+				tlDriver.set(new ChromeDriver(browserOptionsUtil.getChromeBrowserOptions()));
+			}
+
 		}else if(browserName.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
-			//driver = new FirefoxDriver(browserOptionsUtil.getFirefoxBrowserOptions());
-			tlDriver.set(new FirefoxDriver(browserOptionsUtil.getFirefoxBrowserOptions()));
+			
+			if(Boolean.parseBoolean(prop.getProperty("remote"))) {
+				init_remoteWebDriver(browserName);
+			}else {
+				//driver = new FirefoxDriver(browserOptionsUtil.getFirefoxBrowserOptions());
+				tlDriver.set(new FirefoxDriver(browserOptionsUtil.getFirefoxBrowserOptions()));
+			}
+			
 		}else if(browserName.equalsIgnoreCase("edge")) {
 			WebDriverManager.edgedriver().setup();
 			//driver = new EdgeDriver();
@@ -85,6 +103,30 @@ public class BasePage {
 	}
 	
 	
+	/**
+	 * This method will define the desired capabilities and initialize the driver with capability
+	 * Also, this method is initialize the driver with Selenium Hub/Port
+	 */
+	
+	private void init_remoteWebDriver(String browserName) {
+		if(browserName.equalsIgnoreCase("chrome")) {
+			DesiredCapabilities cap = DesiredCapabilities.chrome();
+			cap.setCapability(ChromeOptions.CAPABILITY, browserOptionsUtil.getChromeBrowserOptions());
+			try {
+				tlDriver.set(new RemoteWebDriver(new URL(prop.getProperty("huburl")), cap));
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+		}else if(browserName.equalsIgnoreCase("firefox")) {
+			DesiredCapabilities cap =DesiredCapabilities.firefox();
+			cap.setCapability(FirefoxOptions.FIREFOX_OPTIONS, browserOptionsUtil.getFirefoxBrowserOptions());
+			try {
+				tlDriver.set(new RemoteWebDriver(new URL(prop.getProperty("huburl")), cap));
+			} catch (MalformedURLException e) {
+				e.printStackTrace();
+			}
+		}
+	}
 	
 	
 	
